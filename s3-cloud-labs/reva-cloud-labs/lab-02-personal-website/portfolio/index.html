@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{NAME}}">
+  <title>{{NAME}} · Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav">
+    <a class="brand" href="index.html">{{NAME}}</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="avatar">{{INITIALS}}</div>
+    <h1>Hi, I'm <span class="accent">{{NAME}}</span> 👋</h1>
+    <p class="tagline">{{TAGLINE}}</p>
+    <div class="hero-buttons">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="gallery.html">📷 Photo gallery</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <h2>About me</h2>
+      <!-- ✏️ EDIT ME: write 2-3 sentences about yourself -->
+      <p>
+        I'm a B.Sc. (Hons) student at REVA University who enjoys building things on the cloud.
+        Today I built my own network, servers and storage on AWS, and this website is running
+        on a virtual machine I set up myself.
+      </p>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <!-- ✏️ EDIT ME: add or remove <span class="chip"> items -->
+      <div class="chips">
+        <span class="chip">Linux</span>
+        <span class="chip">Networking</span>
+        <span class="chip">AWS EC2</span>
+        <span class="chip">Amazon S3</span>
+        <span class="chip">Apache</span>
+        <span class="chip">HTML &amp; CSS</span>
+        <span class="chip">Python</span>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-icon">🖧</div>
+          <h3>Cloud Client–Server Network</h3>
+          <p>Built a private VPC with two Ubuntu servers on fixed IPs, secured by firewall rules, and served a web page between them.</p>
+          <div class="tags"><span>VPC</span><span>EC2</span><span>Security Groups</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌐</div>
+          <h3>This Website</h3>
+          <p>Deployed this portfolio on an Apache web server running on an AWS EC2 virtual machine, reachable from anywhere on the internet.</p>
+          <div class="tags"><span>Apache</span><span>Ubuntu</span><span>HTML/CSS</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Private Cloud Drive</h3>
+          <p>Created secure cloud storage with Amazon S3 and shared files using links that expire automatically.</p>
+          <div class="tags"><span>S3</span><span>Presigned URLs</span><span>Encryption</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🖼️</div>
+          <h3>Live Photo Gallery</h3>
+          <p>Connected this server to a private S3 bucket using an IAM role. New photos appear on this site on their own.</p>
+          <div class="tags"><span>IAM Roles</span><span>Python</span><span>Automation</span></div>
+        </article>
+
+        <!-- ✏️ CHALLENGE: copy one <article class="card"> ... </article> block and add your own project here -->
+
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section contact">
+      <h2>Let's connect</h2>
+      <p>Find my work on GitHub:</p>
+      <a class="btn primary" href="https://github.com/{{GITHUB}}" target="_blank" rel="noopener">github.com/{{GITHUB}}</a>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>⚡ Served by <b>Apache</b> on <b>AWS EC2</b> · Mumbai (ap-south-1) · host <code>{{HOSTNAME}}</code></p>
+    <p>Deployed on {{DEPLOY_DATE}} · Built at the REVA University Cloud Lab Day</p>
+  </footer>
+
+</body>
+</html>

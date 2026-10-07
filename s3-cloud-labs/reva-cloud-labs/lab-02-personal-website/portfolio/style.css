@@ -1,0 +1,169 @@
+/* =========================================================
+   Portfolio theme · REVA University Cloud Lab Day
+   Try changing the colours below and refresh your browser!
+   ========================================================= */
+:root {
+  --bg: #0b1020;
+  --bg-soft: #121a33;
+  --card: #161f3d;
+  --border: #26315a;
+  --text: #e8ecf8;
+  --muted: #9aa6c7;
+  --accent: #ff9f1c;      /* AWS-style orange */
+  --accent-2: #4cc9f0;    /* sky blue */
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--accent-2); text-decoration: none; }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+  padding: 14px 6vw;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; color: var(--text); font-size: 1.1rem; }
+.nav-links a { margin-left: 18px; color: var(--muted); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 90px 6vw 70px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(76, 201, 240, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255, 159, 28, 0.18), transparent 45%),
+    var(--bg);
+}
+.avatar {
+  width: 110px; height: 110px; margin: 0 auto 22px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  font-size: 2.4rem; font-weight: 800; color: #0b1020;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 40px rgba(255, 159, 28, 0.35);
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.2; }
+.accent {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tagline { color: var(--muted); font-size: 1.15rem; margin: 14px auto 30px; max-width: 640px; }
+.hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg-soft);
+  font-weight: 600;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #0b1020; }
+
+/* ---------- Sections ---------- */
+.section { max-width: 1040px; margin: 0 auto; padding: 60px 6vw; }
+.section h2 { font-size: 1.8rem; margin-bottom: 18px; }
+.section h2::after {
+  content: ""; display: block; width: 56px; height: 4px; margin-top: 8px;
+  border-radius: 4px; background: var(--accent);
+}
+.section p { color: var(--muted); font-size: 1.05rem; }
+
+/* ---------- Skills ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  padding: 8px 16px; border-radius: 999px;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+/* ---------- Project cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px; transition: transform 0.2s, border-color 0.2s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.card-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.card h3 { margin-bottom: 8px; }
+.card p { font-size: 0.95rem; }
+.tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span {
+  font-size: 0.75rem; padding: 3px 10px; border-radius: 999px;
+  background: rgba(76, 201, 240, 0.12); color: var(--accent-2);
+}
+
+.contact { text-align: center; }
+.contact h2::after { margin-left: auto; margin-right: auto; }
+.contact p { margin-bottom: 18px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center; padding: 30px 6vw 40px;
+  color: var(--muted); font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+.footer code { color: var(--accent); }
+
+/* ---------- Gallery (used by gallery.html) ---------- */
+.locked { text-align: center; padding-top: 110px; padding-bottom: 110px; }
+.locked h1 { margin-bottom: 14px; }
+.locked p { margin-bottom: 8px; }
+.locked .btn { margin-top: 24px; }
+.lock-icon { font-size: 4rem; margin-bottom: 10px; }
+
+.gallery-head { text-align: center; padding-bottom: 10px; }
+.gallery-head h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.gallery-head p { margin-top: 6px; }
+.filter { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
+.filter a { color: var(--text); }
+
+.album h2 small { color: var(--muted); font-size: 0.95rem; font-weight: 400; }
+.photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.photo {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: transform 0.2s, border-color 0.2s;
+}
+.photo:hover { transform: translateY(-4px); border-color: var(--accent-2); }
+.photo img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.photo figcaption { padding: 12px 14px 16px; }
+.photo figcaption b { display: block; color: var(--text); }
+.photo figcaption span { color: var(--muted); font-size: 0.9rem; }
+
+/* Click a photo to open it full-size (pure CSS: uses the #target in the URL) */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 50;
+  background: rgba(5, 8, 18, 0.97);
+  align-items: center; justify-content: center; flex-direction: column;
+  padding: 4vh 4vw; text-align: center;
+}
+.lightbox:target { display: flex; }
+.lightbox img { max-width: 100%; max-height: 78vh; border-radius: 12px; }
+.lightbox p { color: var(--text); margin-top: 14px; }
+.lightbox .close { position: absolute; top: 16px; right: 24px; font-size: 2rem; color: var(--text); }
+
+.sync-note { text-align: center; color: var(--muted); font-size: 0.85rem; padding-bottom: 30px; }
+
+@media (max-width: 560px) {
+  .nav-links a { margin-left: 12px; }
+  .hero { padding-top: 60px; }
+}
